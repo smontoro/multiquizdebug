@@ -101,7 +101,7 @@ function submitAnswer() {
 	//stores the input element in the els variable
 	var els = document.getElementsByTagName("input")
 
-	//loops through the submitted answers
+	//loops through the inputs
 	for (var i = 0; i < els.length; i++) {
 		//if the checked choice & its value = the correct answer...
 		if (els[i].checked && els[i].value.trim() == questions[0].correct.trim()) {
