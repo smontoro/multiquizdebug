@@ -43,7 +43,7 @@ var questionForm = document.getElementById("questionForm")
 function startGame() {
 	//make the form blank
 	questionForm.innerHTML = ""
-	//questionForm.styles.margins  = "12% auto";
+	questionForm.style.margin  = "12% auto";
 
 	//activates the createQuestions function
 	createQuestions()
@@ -78,8 +78,8 @@ function createQuestions() {
 			answerDiv.appendChild(answerEl)
 			answerDiv.appendChild(answerText)
 			formGroup.appendChild(answerDiv)
-		};
-	};
+		}
+	}
 
 	//stores a button in the variable
 	var submitBtn = document.createElement("button")
@@ -94,7 +94,7 @@ function createQuestions() {
 	submitBtn.setAttribute("onclick", "submitAnswer()")
 	//adds the button to the form div
 	questionForm.appendChild(submitBtn)
-}
+};
 
 //submits the user's answers
 function submitAnswer() {
