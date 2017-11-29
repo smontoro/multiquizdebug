@@ -37,48 +37,47 @@ var questions = [
 ];
 
 //stores the question form in the variable
-var questionForm = document.getElementById("questionForm");
+var questionForm = document.getElementById("questionForm")
 
 //when the startGame button is hit
 function startGame() {
 	//make the form blank
-	questionForm.innerHTML = "";
-
+	questionForm.innerHTML = ""
 	//questionForm.styles.margins  = "12% auto";
 
 	//activates the createQuestions function
-	createQuestions();
-}
+	createQuestions()
+};
 
 //adds the questions & radio buttons to the page
 function createQuestions() {
-	questionForm.innerHTML = "";
+	questionForm.innerHTML = ""
 	console.log("running")
 	//loops through the variable i to pull the questions into the h2
 	for (var i = 0; i < 1; i++) {
-		var formGroup   = document.createElement("div");
-			formGroup.className = "formGroup";
-		var questionEl  = document.createElement("h2");
-			questionEl.id = "questions" + [i];
-		var questionText = document.createTextNode(questions[i].question);
+		var formGroup   = document.createElement("div")
+			formGroup.className = "formGroup"
+		var questionEl  = document.createElement("h2")
+			questionEl.id = "questions" + [i]
+		var questionText = document.createTextNode(questions[i].question)
 	
-		questionEl.appendChild(questionText);
-		formGroup.appendChild(questionEl);
-		questionForm.appendChild(formGroup);
+		questionEl.appendChild(questionText)
+		formGroup.appendChild(questionEl)
+		questionForm.appendChild(formGroup)
 
 		//loops through object answers & creates the question section content
 		for (var j = 0; j < questions[i].answers.length; j++) {
-			var answerDiv  = document.createElement("div");
-				answerDiv.className = "questionWrap";
-			var answerEl   = document.createElement("input");
-				answerEl.type = "radio";
-				answerEl.name = "radio" + [i];
-				answerEl.value = questions[i].answers[j];
-			var answerText = document.createTextNode(questions[i].answers[j]);
+			var answerDiv  = document.createElement("div")
+				answerDiv.className = "questionWrap"
+			var answerEl   = document.createElement("input")
+				answerEl.type = "radio"
+				answerEl.name = "radio" + [i]
+				answerEl.value = questions[i].answers[j]
+			var answerText = document.createTextNode(questions[i].answers[j])
 
-			answerDiv.appendChild(answerEl);
-			answerDiv.appendChild(answerText);
-			formGroup.appendChild(answerDiv);
+			answerDiv.appendChild(answerEl)
+			answerDiv.appendChild(answerText)
+			formGroup.appendChild(answerDiv)
 		};
 	};
 
@@ -118,22 +117,22 @@ function submitAnswer() {
 			//if there are no more questions
 			if(questions.length === 0) {
 				//empty all text from the form
-				questionForm.innerHTML = "";
+				questionForm.innerHTML = ""
 				//center the form's text
-				questionForm.style.textAlign = "center";
+				questionForm.style.textAlign = "center"
 				//center the form
-				questionForm.style.margin  = "0 auto";
+				questionForm.style.margin  = "0 auto"
 				//add the following text to the form
-				questionForm.innerHTML = "<h1>Good Job, You Completed the Quiz!!!<h1>" + "</br>" +  "<img src='img/success.jpg'>";
+				questionForm.innerHTML = "<h1>Good Job, You Completed the Quiz!!!<h1>" + "</br>" +  "<img src='img/success.jpg'>"
 
-				return;
+				return
 			};
 
 			setTimeout(function(){
-				createQuestions();
-			}, 500);
+				createQuestions()
+			}, 500)
 
-			return;
+			return
 		}
 	}	
 
@@ -142,7 +141,7 @@ function submitAnswer() {
 
 	for (var i = 0; i < els.length; i++) {
 		if (els[i].checked) {
-			els[i].parentElement.className = "questionWrap wrong";
-		};	
-	};
-}
+			els[i].parentElement.className = "questionWrap wrong"
+		}
+	}
+};
